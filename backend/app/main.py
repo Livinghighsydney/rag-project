@@ -16,6 +16,8 @@ async def lifespan(app: FastAPI):
     get_index()
     get_anthropic_client()
     get_graph()
+    from app.services.retrieval.search_service import _get_model
+    _get_model()
     yield
 
 
