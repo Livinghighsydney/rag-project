@@ -37,6 +37,7 @@ export default function App() {
     return getOrCreateSession(loadSessions()).id
   })
   const [contentType, setContentType] = useState<ContentType>('coaching')
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const { messages, isLoading, error, sendMessage } = useChat(activeId)
 
@@ -82,9 +83,17 @@ export default function App() {
 
   return (
     <div className="flex h-screen overflow-hidden bg-white">
-      <Sidebar sessions={sessions} activeId={activeId} onSelect={setActiveId} onNewChat={newChat} onDelete={deleteSession} />
-      <div className="flex flex-col flex-1 overflow-hidden">
-        <Header onNewChat={newChat} />
+      <Sidebar
+        sessions={sessions}
+        activeId={activeId}
+        onSelect={setActiveId}
+        onNewChat={newChat}
+        onDelete={deleteSession}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+      />
+      <div className="flex flex-col flex-1 overflow-hidden min-w-0">
+        <Header onNewChat={newChat} onMenuOpen={() => setSidebarOpen(true)} />
         <div className="flex-1 overflow-hidden">
           <ChatWindow
             messages={messages}

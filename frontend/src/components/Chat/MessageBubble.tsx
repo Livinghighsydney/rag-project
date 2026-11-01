@@ -42,7 +42,7 @@ export function MessageBubble({ message }: Props) {
   if (isUser) {
     return (
       <div className="flex justify-end mb-4">
-        <div className="max-w-[70%]">
+        <div className="max-w-[85%] md:max-w-[70%]">
           <div className="bg-blue-600 text-white rounded-2xl rounded-tr-sm px-4 py-3 text-sm leading-relaxed">
             {message.content}
           </div>
@@ -54,9 +54,9 @@ export function MessageBubble({ message }: Props) {
 
   return (
     <div className="flex justify-start mb-4">
-      <div className="max-w-[82%]">
+      <div className="max-w-[95%] md:max-w-[82%]">
         <div className="flex items-center gap-2 mb-1">
-          <div className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-white text-xs font-bold">
+          <div className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
             A
           </div>
           <span className="text-xs text-gray-500 font-medium">Advisor</span>
