@@ -1,0 +1,5 @@
+# Integration tests — requires Claude API key
+# test_llm_service_returns_nonempty_answer
+# test_faithfulness_service_flags_hallucination
+# test_faithfulness_service_passes_grounded_answer
+# test_rag_graph_end_to_end_returns_final_answer
